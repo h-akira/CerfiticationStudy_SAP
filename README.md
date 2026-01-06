@@ -8,6 +8,18 @@
 
 ## 目次
 
+### 2026-01-06
+- **[AWS Application Migration Service (MGN) と Refactor Spaces](20260106_mgn-refactor-spaces.md)**
+  - MGN（旧SMS代替、継続的レプリケーション、自動最適化）とRefactor Spaces（ストラングラーフィグパターン、モノリス→マイクロサービス段階的移行）。Re-host/Re-platform/Refactor違い、MGNのインスタンスタイプ・EBS自動最適化、テストカットオーバー、Refactor SpacesのURLパスベースルーティング、Transit Gateway自動管理をMermaid図と表で整理。
+- **[Security Hub & Config 自動修復](20260106_security-hub-config-auto-remediation.md)**
+  - 2024年以降の自動修復（Auto-remediation）設計。EventBridge + Lambda（カスタム修復）とEventBridge + SSM Automation（標準修復）、Security HubとConfigの統合（ASFF形式、Finding集約）、Severity別修復戦略（CRITICAL/HIGH即座修復、MEDIUM通知のみ）、Step Functionsによる複数リソースタイプ統合修復をMermaid図と表で整理。
+- **[AWS Control Tower Landing Zone 3.0以降](20260106_control-tower-landing-zone-3.md)**
+  - Landing Zone 3.0の新機能。既存アカウントインポート（Organizations配下アカウント管理下追加）、カスタムガードレール（SCP、Config Rules、CloudFormation Hooks）、Account Factory for Terraform (AFT、Git+CI/CD自動化)、Control Tower API（EnrollAccount等）、統制の自動展開、自動修復設計（EventBridge + Lambda/SSM）をMermaid図と表で整理。
+- **[AWSセキュリティサービスの通知機能](20260106_security-notifications.md)**
+  - Inspector、Security Hub、GuardDuty、Config、Macieの通知方法比較。直接SNS通知可能なサービス（Config）とEventBridge経由必須のサービス（GuardDuty、Security Hub、Inspector）の違い、SNSトピックポリシーのPrincipal設定（`events.amazonaws.com` vs `config.amazonaws.com`）、Severity別通知パターン、よくある設定ミスをMermaid図と表で整理。
+- **[データベース移行（SCT・DMS）](20260106_database-migration.md)**
+  - AWS SCT（スキーマ変換、ローカルPC、無料）とDMS（データ移行、レプリケーションインスタンス）の比較。SCTエージェント（DWH移行・Cassandra→DynamoDB移行、並列処理）、Cassandra→DynamoDB移行の2つの方法（SCTエージェント推奨、DMS代替）、EC2クローン経由、CDC（継続的レプリケーション）、移行パターンをMermaid図と表で整理。
+
 ### 2026-01-03
 - **[Amazon EMR](20260103_emr.md)**
   - EMRのノードタイプ（マスター、コア、タスク）、スポットインスタンス戦略（タスクノード推奨）、HDFS vs EMRFS（S3）、EMR Serverless、自動スケーリング、コスト最適化をMermaid図と表で整理。
